@@ -1,10 +1,19 @@
+import interior1 from "@/assets/gallery/interior-1.jpg";
+import interior2 from "@/assets/gallery/interior-2.jpg";
+import interior3 from "@/assets/gallery/interior-3.jpg";
+import interior4 from "@/assets/gallery/interior-4.jpg";
+import interior5 from "@/assets/gallery/interior-5.jpg";
+import interior6 from "@/assets/gallery/interior-6.jpg";
+import storefront from "@/assets/gallery/storefront.jpg";
+
 const tiles = [
-  { swatch: "swatch-1", label: "Soft Balayage", h: "tall" },
-  { swatch: "swatch-2", label: "Champagne Glow", h: "short" },
-  { swatch: "swatch-3", label: "Bridal Reverie", h: "mid" },
-  { swatch: "swatch-4", label: "Copper Dusk", h: "mid" },
-  { swatch: "swatch-5", label: "Studio Light", h: "tall" },
-  { swatch: "swatch-6", label: "Lavender Haze", h: "short" },
+  { src: interior5, label: "The Styling Floor", h: "tall" },
+  { src: interior2, label: "Wash & Pedicure Lounge", h: "short" },
+  { src: interior4, label: "Mirror Stations", h: "mid" },
+  { src: interior1, label: "Cutting Bay", h: "mid" },
+  { src: storefront, label: "Emerance, Surat", h: "tall" },
+  { src: interior3, label: "Spa Suite", h: "short" },
+  { src: interior6, label: "Hair Spa Lounge", h: "mid" },
 ];
 
 const heightMap: Record<string, string> = {
@@ -36,7 +45,12 @@ export const Gallery = () => {
               className={`gallery-tile reveal mb-6 break-inside-avoid ${heightMap[t.h]}`}
               data-delay={i * 80}
             >
-              <div className={`tile-img ${t.swatch}`} />
+              <img
+                src={t.src}
+                alt={`${t.label} — Emerance The Salon`}
+                loading="lazy"
+                className="tile-img w-full h-full object-cover"
+              />
               <div className="tile-overlay">
                 <span>{t.label}</span>
               </div>
